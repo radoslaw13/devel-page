@@ -1,0 +1,41 @@
+.contact-content {
+  padding: 40px 0 60px 0;
+}
+
+.contact-us-box {
+  display: flex;
+  margin-top: 20px;
+  font-size: 20px;
+
+  .left-box {
+    padding: 0 20px 20px 0;
+    color: #f1d204;
+    border-right: 1px solid #f1d204;
+    width: 50%;
+  }
+
+  .right-box {
+    padding: 0 0 0 20px;
+    max-width: 50%;
+    & > img {
+      width: 30px;
+      height: 30px;
+      margin: 0 5px;
+      transition: 0.4s;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    .box-right-row {
+      display: block;
+      text-align: left;
+    }
+  }
+}
+
+.footer {
+  background: #292825;
+  height: 200px;
+}

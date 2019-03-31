@@ -1,0 +1,25 @@
+.projects {
+  background-image: url(../images/pattern.bg.png);
+}
+
+.projects-content {
+  padding-top: 20px;
+}
+
+.project-photo {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 25vw;
+  width: 100%;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .project-photo {
+    height: 50vw;
+  }
+}

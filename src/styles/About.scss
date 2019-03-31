@@ -1,0 +1,172 @@
+$color1: #e65500;
+$color2: #e6c800;
+$color3: #91e600;
+
+@keyframes loading-animation {
+  from {
+    transform: scale(0, 1);
+    transform-origin: 0% 50%;
+  }
+  to {
+    transform: scale(1, 1);
+    transform-origin: 0% 50%;
+  }
+}
+
+@keyframes other-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@mixin progress-style($procents, $color) {
+  background-color: $color;
+  width: $procents;
+}
+
+@mixin dot-label-style($procents, $color) {
+  background-color: $color;
+  left: $procents;
+}
+
+.about {
+  padding-bottom: 100px;
+}
+
+.loading-bar-container {
+  width: 100%;
+  padding-top: 100px;
+
+  .loading-description {
+    padding-top: 20px;
+    float: left;
+
+    & > img {
+      height: 30px;
+      margin-right: 5px;
+    }
+
+    &.desc-1 {
+      color: $color1;
+    }
+
+    &.desc-2 {
+      color: $color2;
+    }
+
+    &.desc-3 {
+      color: $color3;
+    }
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 2px;
+    background: #bababa;
+    position: relative;
+
+    .progress {
+      height: 4px;
+      position: absolute;
+
+      &.progress-1 {
+        @include progress-style(80%, $color1);
+      }
+
+      &.progress-2 {
+        @include progress-style(40%, $color2);
+      }
+
+      &.progress-3 {
+        @include progress-style(60%, $color3);
+      }
+    }
+
+    .dot {
+      height: 8px;
+      width: 8px;
+      position: absolute;
+      border-radius: 50%;
+      transform: translate(-50%, 0);
+      opacity: 0;
+
+      &.dot-1 {
+        @include dot-label-style(80%, $color1);
+      }
+
+      &.dot-2 {
+        @include dot-label-style(40%, $color2);
+      }
+
+      &.dot-3 {
+        @include dot-label-style(60%, $color3);
+      }
+    }
+
+    .label {
+      width: 80px;
+      height: 40px;
+      position: absolute;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      font-weight: 700;
+      transform: translate(-50%, 0);
+      top: -60px;
+      border-radius: 5px;
+      opacity: 0;
+
+      p {
+        margin: 0;
+      }
+
+      &.label-1 {
+        @include dot-label-style(80%, $color1);
+      }
+
+      &.label-2 {
+        @include dot-label-style(40%, $color2);
+      }
+
+      &.label-3 {
+        @include dot-label-style(60%, $color3);
+      }
+
+      .triangle-1 {
+        border-top: 10px solid $color1;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+
+      .triangle-2 {
+        border-top: 10px solid $color2;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+
+      .triangle-3 {
+        border-top: 10px solid $color3;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+}
